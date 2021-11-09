@@ -33,14 +33,9 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > 10) {
-            return;
-        }
-        if (currentVolume < 0) {
-            return;
-        }
         this.currentVolume = currentVolume;
     }
+//  Минимальный уровень звука - 0, максимальный уровень звука - 10
 
     public void increaseVolume() {
         if (currentVolume < 10) {
