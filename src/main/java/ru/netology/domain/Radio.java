@@ -31,7 +31,37 @@ public class Radio {
             currentStation = 9;
         }
     }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > 10) {
+            return;
+        }
+        if (currentVolume < 0) {
+            return;
+        }
+        this.currentVolume = currentVolume;
+    }
+
+    public void increaseVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+        if (currentVolume == 10) {
+            System.out.println(currentVolume);
+        }
+    }
+    public void decreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+        if (currentVolume == 0) {
+            System.out.println(currentVolume);
+        }
+    }
     public int getCurrentStation() {
         return currentStation;
+    }
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 }

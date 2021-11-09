@@ -1,6 +1,7 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -116,6 +117,77 @@ class RadioTest {
 
         int expected = 8;
         int actual = rd.getCurrentStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCheckIncreaseVolumeCurrentIs1() {
+        Radio rd = new Radio();
+        rd.setCurrentVolume(1);
+
+        rd.increaseVolume();
+
+        int expected = 2;
+        int actual = rd.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCheckIncreaseVolumeCurrentIs9() {
+        Radio rd = new Radio();
+        rd.setCurrentVolume(9);
+
+        rd.increaseVolume();
+
+        int expected = 10;
+        int actual = rd.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldCheckIncreaseVolumeCurrentIs10() {
+        Radio rd = new Radio();
+        rd.setCurrentVolume(10);
+
+        rd.increaseVolume();
+
+        int expected = 10;
+        int actual = rd.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCheckDecreaseVolumeCurrentIs10() {
+        Radio rd = new Radio();
+        rd.setCurrentVolume(10);
+
+        rd.decreaseVolume();
+
+        int expected = 9;
+        int actual = rd.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCheckDecreaseVolumeCurrentIs1() {
+        Radio rd = new Radio();
+        rd.setCurrentVolume(1);
+
+        rd.decreaseVolume();
+
+        int expected = 0;
+        int actual = rd.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCheckDecreaseVolumeCurrentIs0() {
+        Radio rd = new Radio();
+        rd.setCurrentVolume(0);
+
+        rd.decreaseVolume();
+
+        int expected = 0;
+        int actual = rd.getCurrentVolume();
         assertEquals(expected, actual);
     }
 }
