@@ -35,21 +35,23 @@ public class Radio {
     public void setCurrentVolume(int currentVolume) {
         this.currentVolume = currentVolume;
     }
-//  Минимальный уровень звука - 0, максимальный уровень звука - 10
+
+    int volumeMin = 0;
+    int volumeMax = 10;
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < volumeMax) {
             currentVolume = currentVolume + 1;
         }
-        if (currentVolume == 10) {
+        if (currentVolume == volumeMax) {
             System.out.println(currentVolume);
         }
     }
     public void decreaseVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > volumeMin) {
             currentVolume = currentVolume - 1;
         }
-        if (currentVolume == 0) {
+        if (currentVolume == volumeMin) {
             System.out.println(currentVolume);
         }
     }
